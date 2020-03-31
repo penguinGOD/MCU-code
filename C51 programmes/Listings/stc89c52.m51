@@ -1,0 +1,225 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/15/2018  10:32:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\stc89c52.obj TO .\Objects\stc89c52 PRINT (.\Listings\stc89c
+>> 52.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\stc89c52.obj (STC89C52)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\stc89c52 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?STC89C52
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0049H     INBLOCK      ?PR?KEYCHECK?STC89C52
+            CODE    00D8H     002AH     INBLOCK      ?PR?DISPLAY?STC89C52
+            CODE    0102H     002AH     INBLOCK      ?PR?MAIN?STC89C52
+            CODE    012CH     0023H     INBLOCK      ?PR?_DELAY?STC89C52
+            CODE    014FH     000BH     UNIT         ?CO?STC89C52
+            CODE    015AH     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\stc89c52 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?STC89C52
+  +--> ?C_INITSEG
+
+?PR?MAIN?STC89C52
+  +--> ?PR?DISPLAY?STC89C52
+  +--> ?PR?KEYCHECK?STC89C52
+
+?PR?DISPLAY?STC89C52
+  +--> ?CO?STC89C52
+
+?PR?KEYCHECK?STC89C52
+  +--> ?PR?_DELAY?STC89C52
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/15/2018  10:32:44  PAGE 2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\stc89c52 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0003H         SEGMENT       ?C_C51STARTUP
+  I:0009H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0006H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0003H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0003H         LINE#         133
+  C:0005H         LINE#         134
+  C:0006H         LINE#         135
+  C:0007H         LINE#         136
+  C:0009H         LINE#         185
+  C:000CH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        STC89C52
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00B0H.3       PUBLIC        key4
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0130H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:0102H         PUBLIC        main
+  B:0090H.0       PUBLIC        motor
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A0H.2       PUBLIC        lsa
+  B:00A0H.3       PUBLIC        lsb
+  B:00A0H.4       PUBLIC        lsc
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/15/2018  10:32:44  PAGE 3
+
+
+  C:008FH         PUBLIC        keycheck
+  D:0008H         PUBLIC        pwm
+  D:00C8H         PUBLIC        T2CON
+  C:014FH         PUBLIC        duanxuan
+  C:00D8H         PUBLIC        display
+  D:00D0H         PUBLIC        PSW
+  B:00B0H.1       PUBLIC        key1
+  B:00B0H.0       PUBLIC        key2
+  B:00B0H.2       PUBLIC        key3
+  C:012CH         SYMBOL        L?0040
+  -------         PROC          L?0039
+  -------         ENDPROC       L?0039
+  C:012CH         SYMBOL        L?0040
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0130H         LINE#         6
+  C:0130H         LINE#         7
+  C:0130H         LINE#         9
+  C:013AH         LINE#         10
+  C:014EH         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          DISPLAY
+  C:00D8H         LINE#         192
+  C:00D8H         LINE#         193
+  C:00D8H         LINE#         194
+  C:00EFH         LINE#         195
+  C:0101H         LINE#         197
+  -------         ENDPROC       DISPLAY
+  -------         PROC          KEYCHECK
+  C:008FH         LINE#         198
+  C:008FH         LINE#         199
+  C:008FH         LINE#         200
+  C:0092H         LINE#         201
+  C:0092H         LINE#         202
+  C:0095H         LINE#         203
+  C:0098H         LINE#         204
+  C:0098H         LINE#         205
+  C:00A1H         LINE#         206
+  C:00A1H         LINE#         207
+  C:00A4H         LINE#         208
+  C:00A4H         LINE#         210
+  C:00A7H         LINE#         211
+  C:00A7H         LINE#         212
+  C:00AAH         LINE#         213
+  C:00ADH         LINE#         214
+  C:00ADH         LINE#         215
+  C:00B6H         LINE#         216
+  C:00B6H         LINE#         217
+  C:00B9H         LINE#         218
+  C:00B9H         LINE#         220
+  C:00BCH         LINE#         221
+  C:00BCH         LINE#         222
+  C:00BFH         LINE#         223
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/15/2018  10:32:44  PAGE 4
+
+
+  C:00C2H         LINE#         224
+  C:00C2H         LINE#         225
+  C:00C5H         LINE#         226
+  C:00C5H         LINE#         227
+  C:00C8H         LINE#         228
+  C:00C8H         LINE#         230
+  C:00CBH         LINE#         231
+  C:00CBH         LINE#         232
+  C:00CEH         LINE#         233
+  C:00D1H         LINE#         234
+  C:00D1H         LINE#         235
+  C:00D4H         LINE#         236
+  C:00D4H         LINE#         237
+  C:00D7H         LINE#         238
+  C:00D7H         LINE#         239
+  -------         ENDPROC       KEYCHECK
+  -------         PROC          MAIN
+  -------         DO            
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:0102H         LINE#         240
+  C:0102H         LINE#         241
+  C:0102H         LINE#         243
+  C:0102H         LINE#         244
+  C:0102H         LINE#         245
+  C:010AH         LINE#         246
+  C:010AH         LINE#         247
+  C:010CH         LINE#         248
+  C:010FH         LINE#         249
+  C:0112H         LINE#         250
+  C:0115H         LINE#         251
+  C:0121H         LINE#         252
+  C:0121H         LINE#         253
+  C:0123H         LINE#         254
+  C:0126H         LINE#         255
+  C:0129H         LINE#         256
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        STC89C52
+
+Program Size: data=10.0 xdata=0 code=350
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
